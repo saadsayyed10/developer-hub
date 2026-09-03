@@ -46,6 +46,7 @@ class UserService {
     return user; // Return user data
   }
 
+  // Method to sign-in user account
   async loginUser(email: string, password: string) {
     // Get user from database
     const user = await this.orm.findOne({ email });
@@ -62,6 +63,11 @@ class UserService {
     // Assign user's ID to generate JWT
     const token = generateToken(String(user._id));
     return { token, user }; // Return signed token and user data
+  }
+
+  // Method to fetch logged in user profile
+  async fetchUserProfile(userId: string) {
+    return await this.orm.findById(userId).select("-password"); // Return everything except password
   }
 }
 
