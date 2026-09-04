@@ -12,7 +12,9 @@ const userServices = new UserService();
 /*
     Controller: Sign Up user account
     Method: POST
+    Body: email, password, specialPassword
     Endpoint: /api/user/sign-up
+    Params: None
     Authorization: Not-Required
 */
 export const registerUser = async (req: Request, res: Response) => {
@@ -49,7 +51,9 @@ export const registerUser = async (req: Request, res: Response) => {
 /*
     Controller: Sign In user account
     Method: POST
+    Body: email, password
     Endpoint: /api/user/sign-in
+    Params: None
     Authorization: Not-Required
 */
 export const loginUser = async (req: Request, res: Response) => {
@@ -76,7 +80,9 @@ export const loginUser = async (req: Request, res: Response) => {
 /*
     Controller: Fetch logged in user account
     Method: GET
+    Body: None
     Endpoint: /api/user/profile
+    Params: None
     Authorization: Required
 */
 export const fetchUserProfile = async (req: Request, res: Response) => {

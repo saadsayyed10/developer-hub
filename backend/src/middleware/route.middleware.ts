@@ -5,10 +5,12 @@ import { Router } from "express";
 
 // Custom routers
 import pingRouter from "../routes/ping.route";
+import userRouter from "../routes/user.route";
 
 // Instantiate main router object
 const mainRouter = Router();
 
 mainRouter.use("/health", pingRouter);
+mainRouter.use("/user", userRouter);
 
 export default mainRouter;
