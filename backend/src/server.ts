@@ -5,9 +5,9 @@ import express from "express";
 import cors from "cors";
 
 // Import functions and instances
+import mainRouter from "./middleware/route.middleware";
 import { envConfig } from "./config/env.config";
 import { connectDB } from "./config/db.config";
-import mainRouter from "./routes/index.route";
 
 // Setup
 const app = express();
