@@ -70,3 +70,20 @@ export const loginUser = async (req: Request, res: Response) => {
     return res.status(500).json({ error: error.message });
   }
 };
+
+/*
+    Controller: Fetch logged in user account
+    Method: GET
+    Endpoint: /api/user/profile
+    Authorization: Required
+*/
+export const fetchUserProfile = async (req: Request, res: Response) => {
+  try {
+    const userId = (req as any).user._id;
+
+    const user = await userServices.fetchUserProfile(userId);
+    res.status(200).json({ user });
+  } catch (error: any) {
+    return res.status(500).json({ error: error.message });
+  }
+};
