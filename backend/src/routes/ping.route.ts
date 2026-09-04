@@ -8,7 +8,7 @@ const pingRouter = Router();
 
 pingRouter.get("/", (_req: Request, res: Response) => {
   try {
-    res.status(502).json({ status: 200, health: "OK" });
+    res.status(200).json({ status: 200, health: "OK" });
   } catch (error) {
     return res.status(502).json({ status: 502, health: "BAD GATEWAY" });
   }
