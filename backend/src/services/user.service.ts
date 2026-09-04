@@ -34,7 +34,7 @@ class UserService {
     // Check if user is valid to sign-up
     if (specialPassword !== envConfig.SPECIAL_PASSWORD)
       throw new Error(
-        "You are not authorized to open account for this application",
+        "You are not authorized to open account for this application"
       );
 
     // Hash password with bcrypt's algorithm
