@@ -1,5 +1,9 @@
 /* backend/src/server.ts */
 
+// Fix for windows connectivity issue with MongoDB
+import dns from "node:dns";
+dns.setServers(["1.1.1.1", "8.8.8.8"]);
+
 // Import libraries
 import express from "express";
 import cors from "cors";
